@@ -1,0 +1,17 @@
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-rows), 1fr);
+    grid-template-rows: repeat(var(--grid-cols), 1fr);
+    border: black 1px solid;
+}
+
+.grid-unit {
+    border: black solid .4px;
+    padding: 2em;
+}
