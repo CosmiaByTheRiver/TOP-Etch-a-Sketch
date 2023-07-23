@@ -1,6 +1,21 @@
 
 const container = document.getElementById('container');
 
+// const rows = 16;
+// const cols = 16;
+// for (let i = 0; i < rowNum; i++) {
+//     const row = document.createElement('div');
+//     row.classList.add('row');
+
+//     for (let j = 1; j < colsNum; j++) {
+//         const cols = document.createElement('div');
+//         cols.classList.add('cols');
+//         row.appendChild(cols);
+//     }
+//     container.appendChild(row);
+// };
+
+
 
 function makeGrid(rows, cols) {
     container.style.setProperty('--grid-rows', rows);
@@ -13,3 +28,13 @@ function makeGrid(rows, cols) {
 }
 
 makeGrid(16, 16);
+
+
+
+const cellColor = document.querySelectorAll('.grid-unit');
+
+cellColor.forEach((e) => {
+    e.addEventListener('mouseover', () => {
+        e.style.backgroundColor = 'pink';
+    })
+})
