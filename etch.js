@@ -16,6 +16,8 @@ const container = document.getElementById('container');
 // };
 
 
+                // MAKEGRID FUNCTION \\
+// ----------------------------------------------- \\
 
 function makeGrid(rows, cols) {
     container.style.setProperty('--grid-rows', rows);
@@ -29,7 +31,12 @@ function makeGrid(rows, cols) {
 
 makeGrid(16, 16);
 
+// -------------------------------------------------------------------- \\
 
+
+
+                // CHANGE CELL COLOR - MOUSEOVER \\
+// ----------------------------------------------- \\
 
 const cellColor = document.querySelectorAll('.grid-unit');
 
@@ -38,3 +45,18 @@ cellColor.forEach((e) => {
         e.style.backgroundColor = 'pink';
     })
 })
+
+// -------------------------------------------------------------------- \\
+
+
+
+                // GRID DIMENSION POPUP \\
+// ----------------------------------------------- \\
+
+const dimension = document.querySelector('#button');
+
+dimension.addEventListener('click', () => {
+    prompt("Enter desired grid dimension");
+})
+
+// -------------------------------------------------------------------- \\
