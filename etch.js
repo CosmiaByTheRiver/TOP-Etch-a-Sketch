@@ -1,35 +1,22 @@
 
 const container = document.getElementById('container');
 
-// const rows = 16;
-// const cols = 16;
-// for (let i = 0; i < rowNum; i++) {
-//     const row = document.createElement('div');
-//     row.classList.add('row');
-
-//     for (let j = 1; j < colsNum; j++) {
-//         const cols = document.createElement('div');
-//         cols.classList.add('cols');
-//         row.appendChild(cols);
-//     }
-//     container.appendChild(row);
-// };
-
 
                 // MAKEGRID FUNCTION \\
 // ----------------------------------------------- \\
+let generate;
 
-function makeGrid(rows, cols) {
+function makeGrid(rows = 16, cols = 16) {
     container.style.setProperty('--grid-rows', rows);
     container.style.setProperty('--grid-cols', cols);
 
     for (i = 0; i < (rows * cols); i++) {
-        let generate = document.createElement('div');
+        generate = document.createElement('div');
         container.appendChild(generate).className = 'grid-unit';
     }
 }
 
-makeGrid(16, 16);
+makeGrid();
 
 // -------------------------------------------------------------------- \\
 
@@ -53,10 +40,26 @@ cellColor.forEach((e) => {
                 // GRID DIMENSION POPUP \\
 // ----------------------------------------------- \\
 
+
 const dimension = document.querySelector('#button');
 
-dimension.addEventListener('click', () => {
-    prompt("Enter desired grid dimension");
-})
+let dimInput;
+
+    dimension.addEventListener('click', () => {
+        dimInput = prompt("Enter desired grid dimension");
+
+        function changeGrid() {
+            if (dimInput <= 100) {
+            // container.remove('style');
+            container.setAttribute('style', `--grid-rows: ${dimInput}; --grid-cols:
+            ${dimInput}`);
+
+            };
+        };
+
+        changeGrid();
+    });
+
+
 
 // -------------------------------------------------------------------- \\

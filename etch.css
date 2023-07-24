@@ -12,14 +12,13 @@
 
 #container {
     display: grid;
-    grid-template-columns: repeat(var(--grid-rows), min-content);
-    grid-template-rows: repeat(var(--grid-cols), min-content);
+    grid-template-columns: repeat(var(--grid-rows), 1fr);
+    grid-template-rows: repeat(var(--grid-cols), 1fr);
 }
 
 .grid-unit {
     border: black solid .4px;
-    width: 35px;
-    height: 35px;
+    padding: 15px;
 }
 
 #button {
