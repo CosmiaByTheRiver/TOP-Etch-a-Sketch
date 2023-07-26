@@ -7,19 +7,21 @@
 #wrapper {
     display: flex;
     justify-content: center;
+
 }
 
 
 #container {
-    display: inline-grid;
-    grid-template-columns: repeat(var(--grid-rows), 1fr);
-    grid-template-rows: repeat(var(--grid-cols), 1fr);
+    display: grid;
+    grid-template-columns: repeat(var(--grid-cols), calc(550px / var(--grid-cols)));
+    grid-template-rows: repeat(var(--grid-rows), calc(550px / var(--grid-rows)));
+    height: 500px;
+    width: 500px;
 }
 
 .grid-unit {
     border: black solid .4px;
-    padding: 15px;
-    display: flex;
+    box-sizing: border-box;
 }
 
 #button {
